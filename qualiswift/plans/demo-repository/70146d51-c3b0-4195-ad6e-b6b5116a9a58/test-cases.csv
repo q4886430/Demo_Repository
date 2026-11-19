@@ -1,0 +1,32 @@
+Case ID,Title,Story IDs,Priority,Preconditions,Step Number,Steps,Expected Result,Test Data
+TC-001,Navigate to Project Settings,R001,Critical,User is logged in with access to Project Settings.,1,Login to the application.,,
+TC-001,Navigate to Project Settings,R001,Critical,User is logged in with access to Project Settings.,2,Open the main navigation menu.,,
+TC-001,Navigate to Project Settings,R001,Critical,User is logged in with access to Project Settings.,3,Click on 'Settings'.,,
+TC-001,Navigate to Project Settings,R001,Critical,User is logged in with access to Project Settings.,4,Select 'Project Settings' from the submenu.,User should successfully reach the Project Settings page.,
+TC-002,Verify Action Dropdown Options,R002,High,User is on the Project Settings page.,1,Navigate to the Project Settings page.,,
+TC-002,Verify Action Dropdown Options,R002,High,User is on the Project Settings page.,2,Locate and click the 'Action' dropdown.,"The Action dropdown should contain options: 'Create Project', 'Rename Project'.",
+TC-003,Select Create Project Action,R003,High,Action dropdown options are present.,1,"On the Project Settings page, open the Action dropdown.",,
+TC-003,Select Create Project Action,R003,High,Action dropdown options are present.,2,Select the 'Create Project' option.,'Create Project' option should be selectable and selected.,
+TC-004,Check Workspace Dropdown Presence and Options,R004,High,User has opened 'Create Project' in Project Settings.,1,"In 'Create Project' mode on Project Settings, locate the Workspace dropdown.",,
+TC-004,Check Workspace Dropdown Presence and Options,R004,High,User has opened 'Create Project' in Project Settings.,2,Click the Workspace dropdown to view options.,Workspace dropdown should be present and display correct available workspace options.,
+TC-005,Select Required Workspace,R005,High,Workspace dropdown is visible with options.,1,"In Workspace dropdown, select 'Workspace_A'.",The selected workspace 'Workspace_A' should be accepted and shown as chosen.,Workspace_A
+TC-006,Check Project Name Input Field Presence,R006,High,User is in Create Project mode with workspace selected.,1,Locate the Project Name input field in the Create Project form.,Project Name input field should be present and enabled for text entry.,
+TC-007,Enter Valid Project Name,R007,High,Project Name input field is visible and enabled.,1,Enter 'NewProject_02112026' into the Project Name input field.,Project Name input field should accept and display 'NewProject_02112026'.,NewProject_02112026
+TC-008,Save Project After Providing Details,R008,Critical,Project name and workspace are filled in Create Project form.,1,"After selecting 'Workspace_A' and entering 'NewProject_02112026' as project name, click the Save button.",System should accept the data and process saving the new project.,"Workspace_A, NewProject_02112026"
+TC-009,Verify Success Message After Project Creation,R009,Critical,Project creation request was submitted.,1,"After saving a new project, observe for feedback messages.",A success message should be displayed confirming project creation.,
+TC-010,Verify New Project Present in Selected Workspace,R010,Critical,Project was successfully created.,1,Navigate to the workspace 'Workspace_A' project list.,,NewProject_02112026
+TC-010,Verify New Project Present in Selected Workspace,R010,Critical,Project was successfully created.,2,Look for project named 'NewProject_02112026'.,The newly created project 'NewProject_02112026' should appear under the selected workspace.,NewProject_02112026
+TC-011,Attempt Save Project With Empty Project Name,R008,High,User is in Create Project form.,1,Select 'Create Project' action.,,"Workspace_A, """""
+TC-011,Attempt Save Project With Empty Project Name,R008,High,User is in Create Project form.,2,Select workspace 'Workspace_A'.,,"Workspace_A, """""
+TC-011,Attempt Save Project With Empty Project Name,R008,High,User is in Create Project form.,3,Leave Project Name input field empty.,,"Workspace_A, """""
+TC-011,Attempt Save Project With Empty Project Name,R008,High,User is in Create Project form.,4,Click Save.,System should prevent saving and display a validation error for empty project name.,"Workspace_A, """""
+TC-012,Verify Action Dropdown Contains Only Specified Options,R002,Medium,User is on Project Settings page.,1,Open Action dropdown in Project Settings.,"Dropdown options should be exactly 'Create Project' and 'Rename Project', no additional options.",
+TC-013,Attempt Entering Invalid Project Name Characters,"R007, R008",High,User is in Create Project form.,1,Select 'Create Project' action.,,!@#$%
+TC-013,Attempt Entering Invalid Project Name Characters,"R007, R008",High,User is in Create Project form.,2,Select workspace 'Workspace_A'.,,!@#$%
+TC-013,Attempt Entering Invalid Project Name Characters,"R007, R008",High,User is in Create Project form.,3,"Enter invalid characters (e.g., '!@#$%') into Project Name input field.",,!@#$%
+TC-013,Attempt Entering Invalid Project Name Characters,"R007, R008",High,User is in Create Project form.,4,Attempt to save project.,System should reject invalid characters and display an appropriate validation error.,!@#$%
+TC-014,Verify Workspace Dropdown Disabled When No Workspaces Available,R004,Medium,User has no workspaces assigned.,1,Go to Create Project form when user has no workspaces.,,
+TC-014,Verify Workspace Dropdown Disabled When No Workspaces Available,R004,Medium,User has no workspaces assigned.,2,Check if Workspace dropdown is disabled or shows no options.,Workspace dropdown should be disabled or indicate no available workspaces.,
+TC-015,Rename Project Option Selectability,R003,High,Action dropdown is present.,1,Open Action dropdown.,,
+TC-015,Rename Project Option Selectability,R003,High,Action dropdown is present.,2,Select 'Rename Project'.,'Rename Project' option should be selectable and selected without error.,
+TC-016,Verify Project Name Input Field Max Length,"R006, R008",High,User is in Create Project form.,1,"Attempt to enter a project name exceeding maximum length (e.g., 256 characters).",Input should restrict entry to maximum allowed length or display validation error on save.,A string of 256 'a' characters
